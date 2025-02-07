@@ -28,14 +28,14 @@ public class App {
         Cell end = new Cell(3,3);
 
         List<MazeSolver> soluciones = Arrays.asList(
-            //new MazeSolverRecursivo(),
-            //new MazeSolverBFS(),
-            new MazeSolverDFS());
-            //new MazeSolverDP());
-            //new MazeSolverBFS());
+            new MazeSolverRecursivo(),
+            new MazeSolverBFS(),
+            new MazeSolverDFS(),
+            new MazeSolverDP(),
+            new MazeSolverBFS());
 
             //Scanner selecciona la opcion 
-            int opcion = 1;
+            int opcion = 3;
             MazeSolver solver = soluciones.get(opcion - 1);
             List<Cell> path = solver.getPath(maze, laberinto, start, end);
             
