@@ -2,6 +2,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import controllers.MazeSolverBFS;
+import controllers.MazeSolverDFS;
 import controllers.MazeSolverDP;
 import controllers.MazeSolverRecursivo;
 import controllers.interfaces.MazeSolver;
@@ -28,7 +29,8 @@ public class App {
 
         List<MazeSolver> soluciones = Arrays.asList(
             //new MazeSolverRecursivo(),
-            new MazeSolverBFS());
+            //new MazeSolverBFS(),
+            new MazeSolverDFS());
             //new MazeSolverDP());
             //new MazeSolverBFS());
 
