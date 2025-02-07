@@ -91,7 +91,7 @@ public class Maze {
 
         // Marcar el camino encontrado con '*'
         for (Cell cell : path) {
-            displayGrid[cell.row][cell.col] = " = ";
+            displayGrid[cell.row][cell.col] = " > ";
         }
 
         // Imprimir el laberinto con el camino resaltado

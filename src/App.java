@@ -14,7 +14,7 @@ public class App {
         boolean[][] laberinto = {
             {true, true, true, true},
             {false, true, true, true},
-            {true, false, false, false},
+            {true, true, false, false},
             {true, true, true, true},
 
         };
@@ -27,7 +27,8 @@ public class App {
         Cell end = new Cell(3,3);
 
         List<MazeSolver> soluciones = Arrays.asList(
-            new MazeSolverRecursivo());
+            //new MazeSolverRecursivo(),
+            new MazeSolverBFS());
             //new MazeSolverDP());
             //new MazeSolverBFS());
 

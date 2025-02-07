@@ -18,11 +18,6 @@ public class MazeSolverRecursivo implements MazeSolver{
             return path;
         }
 
-        //if(findPath(grid, start.row, start.col, end, path, visitadas)){
-          //          return path;
-            //    }
-        //return new ArrayList<>();
-
         findPath(maze, grid, start.row, start.col, end, start, path, visitadas);
         List<Cell> exploreList = new ArrayList<>(visitadas);
         return path.isEmpty()? exploreList : path;
@@ -33,12 +28,10 @@ public class MazeSolverRecursivo implements MazeSolver{
         System.out.println(cell);
 
         if(row < 0 || col< 0 || row >= grid.length || col >= grid[0].length || !grid[row][col]){
-            System.out.println("hola");
             return false;
         }
 
         if(visitadas.contains(cell)){
-            System.out.println("contiene");
              return false;
         }
 
@@ -46,36 +39,30 @@ public class MazeSolverRecursivo implements MazeSolver{
         maze.updateMaze(cell, start, end);
         
         if(row == end.row && col == end.col){
-            System.out.println("uuu");
             path.add(cell);
             return true;
         }
 
         if(findPath(maze, grid, row + 1, col, end, start, path, visitadas)){
-            System.out.println("baja fila");
             path.add(cell);
             return true;
         }
 
         if(findPath(maze, grid, row, col + 1, end, start, path, visitadas)){
-            System.out.println("derecha");
             path.add(cell);
             return true;
         }
 
         if(findPath(maze, grid, row - 1, col, end, start, path, visitadas)){
-            System.out.println("sube fila");
             path.add(cell);
             return true;
         }
 
         if(findPath(maze, grid, row, col - 1, end, start, path, visitadas)){
-            System.out.println("izquierda");
             path.add(cell);
             return true;
         }
-        System.out.println("acabo");
-        //visitadas.remove(cell);
+
         path.remove(cell);
         return false;
     }
